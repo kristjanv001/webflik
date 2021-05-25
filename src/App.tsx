@@ -17,7 +17,6 @@ function App() {
       <Row title="Horror!" fetchUrl={requests.fetchHorrorMovies} />
       <Row title="Romance" fetchUrl={requests.fetchRomanceMovies} />
       <Row title="Docs" fetchUrl={requests.fetchDocumentaries} />
-
     </div>
   );
 }
