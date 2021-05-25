@@ -7,7 +7,6 @@ import movieTrailer from "movie-trailer"
 
 const BASE_URL = "https://image.tmdb.org/t/p/original/"
 
-
 export const Row = (props: RowProps) => {
   const { title, fetchUrl, isLargeRow } = props
   const [movies, setMovies] = useState<any[]>([])
@@ -71,16 +70,16 @@ export const Row = (props: RowProps) => {
         {movies && movies.map((movie) => {
 
           return (
-            <>
-              <img
-                key={movie.id}
-                className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-                // src={`${BASE_URL}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
-                src={`${BASE_URL}${movie.poster_path}`}
-                alt={`${movie.title} poster`}
-                onClick={() => handleClick(movie)}
-              />
-            </>
+
+            <img
+              key={movie.id}
+              className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+              // src={`${BASE_URL}${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
+              src={`${BASE_URL}${movie.poster_path}`}
+              alt={`${movie.title} poster`}
+              onClick={() => handleClick(movie)}
+            />
+
           )
         })}
 

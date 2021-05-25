@@ -4,9 +4,6 @@ export const NavBar = () => {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
-    if (show) {
-      return;
-    }
 
     function handleScroll() {
       if (window.scrollY > 100) {
@@ -18,7 +15,7 @@ export const NavBar = () => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [show]);
 
 
   return (
