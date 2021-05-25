@@ -49,11 +49,17 @@ export const Row = (props: RowProps) => {
       movieTrailer(movieTitle, movieYear)
         .then(setLoading(true))
         .then((url: any) => {
-          console.log(url)
+          if (!url) {
+            throw new Error()
+          }
+
           const urlParams = new URLSearchParams(new URL(url).search)
           setTrailerUrl(urlParams.get("v"))
           setLoading(false)
-        }).catch((error: any) => console.log(error))
+        }).catch((error: any) => {
+          console.log(error)
+          setLoading(false)
+        })
     }
   }
 
